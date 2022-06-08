@@ -2,12 +2,12 @@ version: '3.1'
 
 services:
   springboot:
-    image: dockerhandson/spring-boot-mongo:${imageTag}
+    image: dockerhubkavya/spring-boot-mongo:${imageTag}
     restart: always # This will be ignored if we deploy in docker swarm
     environment:
     - MONGO_DB_HOSTNAME=mongo
     - MONGO_DB_USERNAME=devdb
-    - MONGO_DB_PASSWORD=devdb123
+    - MONGO_DB_PASSWORD=devdb@999
     ports:
       - 8080:8080
     working_dir: /opt/app
@@ -21,7 +21,7 @@ services:
     image: mongo
     environment:
     - MONGO_INITDB_ROOT_USERNAME=devdb
-    - MONGO_INITDB_ROOT_PASSWORD=devdb123
+    - MONGO_INITDB_ROOT_PASSWORD=devdb@999
     volumes:
       - mongodb:/data/db
     restart: always
